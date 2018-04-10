@@ -10,6 +10,7 @@ import reply
 def bye(data):
     # data : type dic (line event)
     if(data['source']['type'] == 'user'):
+        reply.replytext(data['replyToken'], '退出コマンドは個人トークで使用できません')
         pass
 
     elif(data['source']['type'] == 'group'):
