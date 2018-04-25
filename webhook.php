@@ -9,4 +9,13 @@ $Path = 'python2.7 2>&1 -B /home/kusanagi/WordPress/DocumentRoot/bot/line/dev/li
 
 exec($Path, $stdout, $return);
 
+foreach ($stdout as $line) {
+  $string .= $line."\n";
+}
+$string .= ".\n";
+
+if($return != 0){
+  error_log($string, 3, "./logger.log");
+}
+
 ?>
