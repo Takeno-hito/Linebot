@@ -41,4 +41,4 @@ def replytext(Token, text):
         fh.setFormatter(formatter)
         sh.setFormatter(formatter)
 
-        logger.log(50, '')-)
+        logger.log(50, '')
