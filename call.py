@@ -3,6 +3,7 @@
 import sys
 import json
 from command import other
+from command.minigame import gamble, rpg
 
 dataString = sys.argv[1]
 data = json.loads(dataString)
@@ -18,3 +19,7 @@ for event in data['events']:
             elif(text == '/bye'):
                 print 'Bye!'
                 other.bye(event)
+            elif(text == '/lot'):
+                gamble.lottery(event)
+            elif(text == '/stat'):
+                other.status(event)
