@@ -22,4 +22,4 @@ for event in data['events']:
             elif(text == '/lot'):
                 gamble.lottery(event)
             elif(text == '/stat'):
-                other.status(event)
+                #other.status(event)
