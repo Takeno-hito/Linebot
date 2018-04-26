@@ -29,7 +29,7 @@ def status(data):
         }
         url = 'https://api.line.me/v2/bot/profile/' + data['source']['userId']
         response = requests.get(url, headers = header)
-        resData = json.load(response)
+        resData = json.loads(response)
 
         string = '''
         あなたの情報
