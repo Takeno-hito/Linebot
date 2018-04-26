@@ -14,8 +14,7 @@ foreach ($stdout as $line) {
 }
 $string .= ".\n";
 
-if($return != 0){
-  error_log($string, 3, "./logger.log");
-}
+error_log($string, 0);
+echo $string;
 
 ?>
