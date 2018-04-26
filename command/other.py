@@ -38,7 +38,10 @@ def status(data):
 
     if(data['source']['type'] == 'group'):
         if(userId in data['source']):
-            header = "Bearer " + access_token
+            header = {
+                "Content-Type" : "application/json",
+                "Authorization" : "Bearer {}".format(botconfig.access_token)
+            }
             url = 'https://api.line.me/v2/bot/group/{groupId}/member/{userId}'.format(
                 groupId = data['source']['groupId'], userId = data['source']['userId'])
             response = requests.get(url, headers = header)
