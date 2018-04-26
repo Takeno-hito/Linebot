@@ -23,7 +23,10 @@ def bye(data):
 
 def status(data):
     if(data['source']['type'] == 'user'):
-        header = "Bearer " + access_token
+        header = {
+            "Content-Type" : "application/json",
+            "Authorization" : "Bearer {}".format(botconfig.access_token)
+        }
         url = 'https://api.line.me/v2/bot/profile/' + data['source']['userId']
         response = requests.get(url, headers = header)
         resData = json.load(response)
